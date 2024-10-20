@@ -1,4 +1,6 @@
 import PageObj.MainPage;
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +13,8 @@ public class LoginWithDataTest {
     @Rule
     public DriverRule factory = new DriverRule();
 
+    @DisplayName("Getting a next page after authorized user")
+    @Description("Getting a next page  with valid user data ")
     @Test
     public void emailFieldIsDisplayedTest() {
         WebDriver driver = factory.getDriver();
