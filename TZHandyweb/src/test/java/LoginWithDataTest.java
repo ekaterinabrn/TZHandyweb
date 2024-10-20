@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import static org.junit.Assert.assertTrue;
 
-public class LoginPageTest {
+public class LoginWithDataTest {
     private WebDriver driver;
     private MainPage mainPage;
     @Rule
@@ -16,14 +16,11 @@ public class LoginPageTest {
         WebDriver driver = factory.getDriver();
         mainPage = new MainPage(driver);
         mainPage.open();
-        assertTrue(mainPage.emailFieldIsDisplayed());
-    }
+        mainPage.setEmail("demo@example.com");
+        mainPage.setPassword("123321");
+        mainPage.clickButton();
+        assertTrue(mainPage.nextPageDisplayed());
 
-    @Test
-    public void passwordFieldIsDisplayedTest() {
-        WebDriver driver = factory.getDriver();
-        mainPage = new MainPage(driver);
-        mainPage.open();
-        assertTrue(mainPage.passwordFieldIsDisplayed());
+
     }
 }
